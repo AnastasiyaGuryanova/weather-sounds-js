@@ -12,28 +12,28 @@ export default [
 
 		languageOptions: {
 			parserOptions: {
-		    ecmaVersion: 2021, 
-		    sourceType: 'module',
-		    },
-	    },
+				ecmaVersion: 2021,
+				sourceType: 'module',
+			},
+		},
 
 		rules: {
 			...eslintConfigPrettier.rules,
-			'indent': ['error', 'tab'],
+			indent: ['error', 'tab'],
 			'no-unused-vars': 'warn',
 			'no-console': 'off',
 			'no-debugger': 'warn',
-			'semi': ['error', 'always'],
-			'quotes': ['error', 'single'],
-			"prettier/prettier": "error",
+			semi: ['error', 'always'],
+			quotes: ['error', 'single'],
+			'prettier/prettier': 'error',
 		},
 
 		settings: {
 			'import/resolver': {
-		        webpack: {
+				webpack: {
 					config: 'webpack.config.dev.js',
-		        },
+				},
 			},
-	    },
+		},
 	},
 ];
