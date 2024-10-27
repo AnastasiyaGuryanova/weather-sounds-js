@@ -3,6 +3,86 @@
 	src: url('./fonts/Roboto-Regular.ttf') format('truetype');
 }
 
+$body-height: 100vh;
+$blur-filter: 3px;
+$button-size: 160px;
+$button-margin: 30px;
+$icon-size: 30%;
+$background-url: '../public/assets/images/';
+
 body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	height: $body-height;
+	position: relative;
+	overflow: hidden;
 	font-family: 'Roboto', sans-serif;
+}
+
+#blur-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('#{$background-url}summer.jpg');
+	background-size: cover;
+	background-position: center;
+	filter: blur($blur-filter);
+	z-index: 0;
+}
+
+#app {
+	text-align: center;
+	margin-top: 50px;
+	z-index: 1;
+
+	.controls {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.buttons {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 50px;
+
+			.sound-button {
+				width: $button-size;
+				height: $button-size;
+				margin: 0 $button-margin;
+				padding: 0;
+				border: none;
+				border-radius: 10px;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				cursor: pointer;
+				position: relative;
+
+				&[data-sound='rain'] {
+					background-image: url('#{$background-url}rain.jpg');
+				}
+				&[data-sound='summer'] {
+					background-image: url('#{$background-url}summer.jpg');
+				}
+				&[data-sound='winter'] {
+					background-image: url('#{$background-url}winter.jpg');
+				}
+
+				.icon {
+					width: $icon-size;
+					height: $icon-size;
+				}
+			}
+		}
+
+		input[type='range'] {
+			margin: 20px 0;
+		}
+	}
 }

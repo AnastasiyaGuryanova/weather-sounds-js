@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "Nature sounds app with volume control and background changes",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"start": "concurrently \"npm run lint:watch\" \"webpack serve --config webpack.config.dev.cjs\"",
 		"lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
