@@ -14,7 +14,10 @@ Weather Sounds — это небольшое приложение на JavaScrip
 - ESLint для проверки кода и Prettier для его автоматического форматирования.
 - Конфигурации Webpack для development и production с поддержкой HTML, CSS, Sass, шрифтов, изображений, аудио и favicon.
 
-## Запуск приложения
+Клонирование репозитория:
+```bash
+git clone git@github.com:AnastasiyaGuryanova/weather-sounds-js.git
+```
 
 1. Установка зависимостей:
    ```bash
