@@ -18,8 +18,12 @@ module.exports = {
 		new CopyPlugin({
 			patterns: [
 				{
-					from: path.resolve(__dirname, './public/assets'),
-					to: 'assets',
+					from: path.resolve(__dirname, './public/assets/sounds'),
+					to: 'assets/sounds',
+				},
+				{
+					from: path.resolve(__dirname, './public/assets/icons'),
+					to: 'assets/icons',
 				},
 			],
 		}),
@@ -38,6 +42,16 @@ module.exports = {
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
+				generator: {
+					filename: 'fonts/[name][ext]',
+				},
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: 'assets/images/[name][ext]',
+				},
 			},
 		],
 	},
